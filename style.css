@@ -62,3 +62,11 @@ img.round{width:100%; border-radius:18px; object-fit:cover}
 :root[data-theme="dark"] .hero{ background:#1c1d20; box-shadow:0 8px 24px rgba(0,0,0,.35); }
 :root[data-theme="dark"] nav{ background:linear-gradient(90deg,#3a2f34,#4a3642); }
 :root[data-theme="dark"] nav a{ color:#f0f0f0; }
+
+.card{
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+.card:hover{
+  transform: translateY(-6px);
+  box-shadow: 0 14px 34px rgba(0,0,0,.18);
+}
