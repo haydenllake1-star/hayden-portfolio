@@ -27,16 +27,21 @@
   </div>
   <footer>© <span id="y"></span> Hayden Lake</footer>
   <script>document.getElementById('y').textContent = new Date().getFullYear()</script>
-  <script>
-  // restore mode from previous visit
-  const saved = localStorage.getItem('theme');
-  if(saved){ document.documentElement.setAttribute('data-theme', saved); }
+<script>
+  const root = document.documentElement;
+
+  // set initial theme (persisted or default)
+  const saved = localStorage.getItem('theme') || 'light';
+  root.setAttribute('data-theme', saved);
 
   // toggle on click
-  document.getElementById('mode-toggle')?.addEventListener('click', () => {
-    const cur = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
-    document.documentElement.setAttribute('data-theme', cur);
-    localStorage.setItem('theme', cur);
+  const btn = document.getElementById('mode-toggle');
+  btn.addEventListener('click', () => {
+    const next = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+    root.setAttribute('data-theme', next);
+    localStorage.setItem('theme', next);
+    // optional: change icon
+    btn.textContent = next === 'dark' ? '☀️' : '🌙';
   });
 </script>
 </body>
