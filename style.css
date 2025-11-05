@@ -49,3 +49,16 @@ img.round{width:100%; border-radius:18px; object-fit:cover}
   transform: translateY(-2px);
   box-shadow: 0 18px 34px rgba(0,0,0,.16);
 }
+/* --- Dark mode palette --- */
+:root[data-theme="dark"]{
+  --peach:#3a2f34;
+  --cream:#141416;
+  --blush:#4a3642;
+  --mauve:#6b5a65;
+  --ink:#f2f2f2;
+}
+:root[data-theme="dark"] body{ background:var(--cream); color:var(--ink); }
+:root[data-theme="dark"] .card,
+:root[data-theme="dark"] .hero{ background:#1c1d20; box-shadow:0 8px 24px rgba(0,0,0,.35); }
+:root[data-theme="dark"] nav{ background:linear-gradient(90deg,#3a2f34,#4a3642); }
+:root[data-theme="dark"] nav a{ color:#f0f0f0; }
